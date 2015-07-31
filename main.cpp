@@ -1,7 +1,5 @@
 #include <iostream>
-#include <sys/unistd.h>
-#include "LogManager.h"
-#include "Manager.h"
+#include "src/LogManager.h"
 
 using namespace std;
 
