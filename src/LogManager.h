@@ -19,10 +19,14 @@ Log file manager, Created by Kyle the Komodoman on 7/29/2015.
 
 #define KOMODO_LOG_DIR "Logs"
 #define KOMODO_LOG_NAME "Komodo.log"
+#define MAX_MSG_LEN 200
+#define LOG_NAME_LEN 25
+#define DATE_TIME_LEN 11
 #define YEAR_INDEX 1900 // Used for generating current year
 #define MONTH_INDEX 1   // Used for generating current month
 #define I18N "US" //TODO: Remove and create a real I18N solution
 #define ERROR -1
+#define SUCCESS 0
 
 using namespace std;
 
@@ -53,6 +57,9 @@ public:
 
     // Shut down the log manager, close the komodo log
     void shutDown();
+
+    // Write splash to log
+    void initializeLog();
 
     // Write to the komodo log
     // return # of bytes written, or -1 for error
