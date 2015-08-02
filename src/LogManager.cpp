@@ -5,6 +5,7 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "LogManager.h"
 
@@ -43,6 +44,18 @@ int LogManager::writeLog(const char *fmt, ...) {
     static char tmp_arg_msg[MAX_MSG_LEN];
     int status_int = SUCCESS;
 
+    // Ensure that input is not longer than MAX_MSG_LEN
+    int length = strlen(fmt);
+    if (length > MAX_MSG_LEN) {
+        writeLog("======================== KOMODO LOG MANAGER WARNING ===================================");
+        writeLog("|-> WARNING: Komodo tried to output a message here, but it was too long!");
+        writeLog("|-> WARNING INFO: MAX_MSG_LEN currently set to %d, your message was %d chars long.",
+                 MAX_MSG_LEN, length);
+        writeLog("|-> WARNING INFO: You can change MAX_MSG_LEN in LogManager.h");
+        writeLog("=============================== END WARNING ===========================================");
+        return ERROR;
+    }
+
     // Construct message with variable arguments
     va_list args;
     va_start(args, fmt);
@@ -55,6 +68,7 @@ int LogManager::writeLog(const char *fmt, ...) {
     // Write log message to file, check for error
     int error = fprintf(p_f, message);
     if (error < 0) {
+        perror("Error writing to Komodo log");
         status_int = ERROR;
     }
 
