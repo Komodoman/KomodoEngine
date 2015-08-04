@@ -29,12 +29,22 @@ void GameManager::run(int fr_time) {
     int counter = 0;
     long int loop_time;
     Clock clock;
-    while (counter < 1000) {
+    while (!game_over) {
         clock.delta();
-        LogManager::getInstance().writeLog("Game Loop Iteration %d", counter);
-        loop_time = clock.split();
-        usleep(DEFAULT_FRAME_TIME - loop_time);
+
+        //TODO: Get input from keyboard/mouse/controller
+        //TODO: Update World State
+        //TODO: Draw new screen to buffer
+        //TODO: Swap back buffer to current buffer
+
+        LogManager::getInstance().writeLog("Game Loop Iteration %d", counter);  //TESTING
+
+        loop_time = clock.split();  // Get time it took to run the loop
+        usleep(DEFAULT_FRAME_TIME - loop_time); // If finished before DEFAULT_FRAME_TIME, wait
         counter++;
+        if (counter >= 1000) {
+            setGameOver();
+        }
     }
 }
 
@@ -43,7 +53,7 @@ int GameManager::getFrameTime() {
 }
 
 void GameManager::setGameOver() {
-
+    game_over = true;
 }
 
 GameManager::~GameManager() {
