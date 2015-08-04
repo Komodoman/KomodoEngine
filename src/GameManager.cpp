@@ -40,7 +40,7 @@ void GameManager::run(int fr_time) {
         LogManager::getInstance().writeLog("Game Loop Iteration %d", counter);  //TESTING
 
         loop_time = clock.split();  // Get time it took to run the loop
-        usleep(DEFAULT_FRAME_TIME - loop_time); // If finished before DEFAULT_FRAME_TIME, wait
+        usleep(fr_time - loop_time); // If finished before DEFAULT_FRAME_TIME, wait
         counter++;
         if (counter >= 1000) {
             setGameOver();
@@ -49,7 +49,7 @@ void GameManager::run(int fr_time) {
 }
 
 int GameManager::getFrameTime() {
-    return 0;
+    return DEFAULT_FRAME_TIME;
 }
 
 void GameManager::setGameOver() {
