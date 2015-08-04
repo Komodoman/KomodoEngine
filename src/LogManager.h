@@ -25,7 +25,6 @@ Log file manager, Created by Kyle the Komodoman on 7/29/2015.
 #define YEAR_INDEX 1900 // Used for generating current year
 #define MONTH_INDEX 1   // Used for generating current month
 #define I18N "US" //TODO: Remove and create a real I18N solution
-#define MSG_TOO_LONG 0
 #define ERROR -1
 #define SUCCESS 0
 

@@ -1,8 +1,6 @@
 //
 // Created by Kyle the Komodoman on 7/29/2015.
 //
-
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
@@ -45,7 +43,7 @@ int LogManager::writeLog(const char *fmt, ...) {
     int status_int = SUCCESS;
 
     // Ensure that input is not longer than MAX_MSG_LEN
-    int length = strlen(fmt);
+    long int length = strlen(fmt);
     if (length > MAX_MSG_LEN) {
         writeLog("======================== KOMODO LOG MANAGER WARNING ===================================");
         writeLog("|-> WARNING: Komodo tried to output a message here, but it was too long!");
@@ -145,9 +143,8 @@ void LogManager::initializeLog() {
     writeLog("                                       --~~\"\"\"\"---......._________...--'     ");
     writeLog("Komodo is Initializing...");
     if (do_flush) {
-        writeLog(
-                "Komodo Log Manager is Online... WARNING: FLUSHING CURRENTLY ENABLED, USE ONLY DURING DEVELOPMENT!!!!");
+        writeLog("Komodo Log Manager is Online... WARNING: FLUSHING CURRENTLY ENABLED, USE ONLY DURING DEVELOPMENT!!");
     } else {
-        writeLog("Komodo Log Manager is Online... WARNING: FLUSHING DISABLED");
+        writeLog("Komodo Log Manager is Online... flushing is disabled");
     }
 }
