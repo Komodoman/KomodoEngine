@@ -13,7 +13,7 @@ int main() {
     // INITIAL GAME MANAGER TESTING
     GameManager &kgm = GameManager::getInstance();
     kgm.startUp();
-    kgm.run();  // Run for 3.3 seconds
+    kgm.run();  // Run for .33 seconds
     kgm.shutDown();
 
 

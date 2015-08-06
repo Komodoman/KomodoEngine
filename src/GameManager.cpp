@@ -42,7 +42,7 @@ void GameManager::run(int fr_time) {
         loop_time = clock.split();  // Get time it took to run the loop
         usleep(fr_time - loop_time); // If finished before DEFAULT_FRAME_TIME, wait
         counter++;
-        if (counter >= 1000) {
+        if (counter >= 100) {
             setGameOver();
         }
     }

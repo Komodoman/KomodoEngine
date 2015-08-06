@@ -142,6 +142,7 @@ void LogManager::initializeLog() {
     writeLog("                 ~~~                          _______.......----~~~     _,'  ");
     writeLog("                                       --~~\"\"\"\"---......._________...--'     ");
     writeLog("Komodo is Initializing...");
+    writeLog("Komodo Game Manager is Online...");
     if (do_flush) {
         writeLog("Komodo Log Manager is Online... WARNING: FLUSHING CURRENTLY ENABLED, USE ONLY DURING DEVELOPMENT!!");
     } else {
