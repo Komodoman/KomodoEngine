@@ -6,7 +6,7 @@
       /\/~     /'    )--/'    )     )  /'    )--/'    /' /'    )--
     /'  \    /'    /' /'    /'    /' /'    /' /'    /' /'    /'
 (,/'     \_,(___,/' /'    /'    /(__(___,/'  (___,/(__(___,/' engine
-Game manager, Created by Kyle the Komodoman on 8/5/2015.
+Component Base Class, Created by Kyle the Komodoman on 8/5/2015.
 */
 
 #ifndef KOMODO_COMPONENT_H

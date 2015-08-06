@@ -6,25 +6,33 @@
       /\/~     /'    )--/'    )     )  /'    )--/'    /' /'    )--
     /'  \    /'    /' /'    /'    /' /'    /' /'    /' /'    /'
 (,/'     \_,(___,/' /'    /'    /(__(___,/'  (___,/(__(___,/' engine
-Entity Base Class, Created by Kyle the Komodoman on 8/5/2015.
+Game manager, Created by Kyle the Komodoman on 8/5/2015.
 */
 
-#ifndef KOMODO_ENTITY_H
-#define KOMODO_ENTITY_H
+#ifndef KOMODO_VECTOR3_H
+#define KOMODO_VECTOR3_H
 
 
-class Entity {
+class Vector3 {
 
 public:
-    Entity(int e_id);
+    Vector3();
 
-    int getEntityId();
+    Vector3(int x, int y, int z);
+
+    int getX();
+
+    int getY();
+
+    int getZ();
 
 private:
-    int entity_id;
+    int xVal;
+    int yVal;
+    int zVal;
 
 
 };
 
 
-#endif //KOMODO_ENTITY_H
+#endif //KOMODO_VECTOR3_H
